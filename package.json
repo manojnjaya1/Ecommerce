@@ -7,7 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node backend/server.js",
     "dev": "nodemon backend/server.js",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false  && npm install --prefix frontend && npm run build --prefix frontend"
+    "build": "cd backend/frontend && npm run build",
+    "install-client": "cd backend/frontend && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "client": "cd backend/frontend && npm start"
   },
   "author": "",
   "license": "ISC",
