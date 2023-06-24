@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "backend/server.js",
+ 
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend/server.js",
-    "dev": "nodemon backend/server.js",
     "build": "cd backend/frontend && npm run build",
     "install-client": "cd backend/frontend && npm install",
-    "heroku-postbuild": "npm run install-client && npm run build",
+    "client-build": "npm run install-client && npm run build",
+    "server-build": "npm install",
+    "app-build": "npm run client-build && npm run server-build",
+    "start": "node backend/server.js",
     "client": "cd backend/frontend && npm start"
   },
   "author": "",
